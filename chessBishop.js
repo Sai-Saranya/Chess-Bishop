@@ -1,6 +1,22 @@
 const trList = document.getElementsByTagName("tr");
 const table = document.getElementById("myTable");
 
+
+function printTable(){
+    let tableHTML='';
+    const trBeginning="<tr>";
+    const tdCell="<td></td>";
+    const trEnd="</td>"
+    for(let i=0;i<8;i++){
+        tableHTML=tableHTML+trBeginning;
+        for(let j=0;j<8;j++){
+            tableHTML=tableHTML+tdCell;
+        }
+        tableHTML=tableHTML+trEnd;
+    }
+    table.innerHTML=tableHTML;
+}
+
 function starterView() {
     let i=0;
     let j=0;
@@ -51,4 +67,5 @@ table.addEventListener("mouseover",(e)=>{
     trList[rowIndex].children[colIndex].style.backgroundColor="lightblue";
 });
 
+printTable();
 starterView();
